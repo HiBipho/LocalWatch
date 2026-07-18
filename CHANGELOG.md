@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] - 2026-07-18
+### Fixed
+- **Force Close Bug:** Disabled overly aggressive ProGuard minification (`minifyEnabled=false`) which was stripping native P2P networking components during release builds.
+### Changed
+- **UI/UX:** Replaced default Expo icons with a custom premium, neon-styled dark mode icon.
+- **Build System:** Fixed `Duplicate Resources` AAPT error during `assembleRelease` by gracefully handling `.webp` and `.png` asset generation.
+
+## [1.0.1] - 2026-07-18
+### Changed
+- **App Size Reduction:** Enabled Android ABI Splits (`armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64`) to eliminate universal APK bloat. Reduced APK size by ~70% (from 102 MB down to 31 MB).
+
 ## [1.0.0] - 2026-07-18
 ### Added
 - **Core Engine:** Initialized React Native Expo project.
