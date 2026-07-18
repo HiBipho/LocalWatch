@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2026-07-18
+### Fixed
+- **Startup Crash:** Disabled React Native's "New Architecture" (`newArchEnabled=false`). The newer architecture is incompatible with older native plugins like `react-native-zeroconf` and was causing a fatal JS runtime error immediately upon launch on physical devices.
 ## [1.0.2] - 2026-07-18
 ### Fixed
 - **Force Close Bug:** Disabled overly aggressive ProGuard minification (`minifyEnabled=false`) which was stripping native P2P networking components during release builds.
