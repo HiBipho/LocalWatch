@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@dr.pogodin/react-native-static-server": "^0.27.0",
     "expo": "~57.0.7",
+    "expo-av": "^16.0.8",
+    "expo-build-properties": "^57.0.6",
+    "expo-document-picker": "^57.0.1",
     "expo-status-bar": "~57.0.1",
     "react": "19.2.3",
-    "react-native": "0.86.0"
+    "react-native": "0.86.0",
+    "react-native-tcp-socket": "^6.4.1",
+    "react-native-zeroconf": "^0.14.0"
   },
   "scripts": {
     "start": "expo start",
