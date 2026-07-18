@@ -20,6 +20,6 @@ git commit -m "fix: Disable New Architecture for legacy native module support" |
 git push origin main || true
 
 echo "Uploading to GitHub..."
-gh release create v1.0.3 android/app/build/outputs/apk/release/*.apk -t "LocalWatch MVP (Crash Fix)" -n "Fixed the startup crash caused by React Native New Architecture incompatibility with older plugins."
+gh release create v1.0.4-debug android/app/build/outputs/apk/release/*.apk -t "LocalWatch MVP (Debug Version)" -n "Injected a Global Error Catcher. If the app crashes, it will show an alert box instead of force closing."
 
 echo "All done!"

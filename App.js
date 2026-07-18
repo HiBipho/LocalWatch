@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, StatusBar, Alert } from 'react-native';
 import HostScreen from './src/screens/HostScreen';
 import ClientScreen from './src/screens/ClientScreen';
+
+// --- CRASH DEBUGGER ---
+const defaultErrorHandler = ErrorUtils.getGlobalHandler();
+ErrorUtils.setGlobalHandler((error, isFatal) => {
+  Alert.alert(
+    'Fatal Error Caught!',
+    `Type: ${error.name}\nMsg: ${error.message}\n\nPlease screenshot this and send it to the developer.`,
+    [{ text: 'OK' }]
+  );
+  console.log("FATAL ERROR: ", error);
+});
 
 export default function App() {
   const [role, setRole] = useState(null);

@@ -2,6 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.4-debug] - 2026-07-18
+### Added
+- **Global Error Handler:** Injected `ErrorUtils.setGlobalHandler` to catch fatal JS exceptions on launch and display them as an Alert box rather than silently crashing.
 ## [1.0.3] - 2026-07-18
 ### Fixed
 - **Startup Crash:** Disabled React Native's "New Architecture" (`newArchEnabled=false`). The newer architecture is incompatible with older native plugins like `react-native-zeroconf` and was causing a fatal JS runtime error immediately upon launch on physical devices.
