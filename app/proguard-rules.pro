@@ -1,0 +1,6 @@
+-keep class io.ktor.** { *; }
+-dontwarn io.ktor.**
+-keep class io.netty.** { *; }
+-dontwarn io.netty.**
+-keep class org.slf4j.** { *; }
+-dontwarn org.slf4j.**

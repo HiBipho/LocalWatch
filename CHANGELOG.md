@@ -2,31 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.4-debug] - 2026-07-18
+## [V3.0.0-alpha] - 2026-07-18
 ### Added
-- **Global Error Handler:** Injected `ErrorUtils.setGlobalHandler` to catch fatal JS exceptions on launch and display them as an Alert box rather than silently crashing.
-## [1.0.3] - 2026-07-18
-### Fixed
-- **Startup Crash:** Disabled React Native's "New Architecture" (`newArchEnabled=false`). The newer architecture is incompatible with older native plugins like `react-native-zeroconf` and was causing a fatal JS runtime error immediately upon launch on physical devices.
-## [1.0.2] - 2026-07-18
-### Fixed
-- **Force Close Bug:** Disabled overly aggressive ProGuard minification (`minifyEnabled=false`) which was stripping native P2P networking components during release builds.
-### Changed
-- **UI/UX:** Replaced default Expo icons with a custom premium, neon-styled dark mode icon.
-- **Build System:** Fixed `Duplicate Resources` AAPT error during `assembleRelease` by gracefully handling `.webp` and `.png` asset generation.
+- **Live Emoji Reactions**: Banjir emoji terbang di atas layar secara Real-Time.
+- **Picture-in-Picture (PiP)**: Layar film bisa diperkecil agar bisa membalas chat/WhatsApp.
+- **Floating Live Chat**: Sistem obrolan melayang (Glassmorphism) transparan di atas video.
+- **Auto-Reconnect System**: Anti putus, aplikasi otomatis menyambung kembali 5x jika koneksi WiFi tidak stabil.
+- **Riwayat Ruangan (One-Tap Join)**: Mengingat IP Host terakhir untuk bergabung super instan.
+- **Dukungan Subtitle (.srt)**: Host bisa memasukkan file subtitle yang akan muncul secara ajaib di layar seluruh penonton.
+- **Bioskop Tanpa Gangguan (WakeLock)**: Mencegah layar mati atau meredup selama pemutaran film.
+- **Perombakan Visual**: AMOLED Dark Mode dengan sentuhan Neon Cyan dan antarmuka premium.
+- **Sistem Katalog V1 (Netflix Style)**: Host bisa memilih satu Folder penuh untuk memunculkan daftar JSON seluruh film `.mp4`/`.mkv`. Klien hanya tinggal duduk manis!
 
-## [1.0.1] - 2026-07-18
+## [2.0.0-alpha] - 2026-07-18
 ### Changed
-- **App Size Reduction:** Enabled Android ABI Splits (`armeabi-v7a`, `arm64-v8a`, `x86`, `x86_64`) to eliminate universal APK bloat. Reduced APK size by ~70% (from 102 MB down to 31 MB).
+- **Massive Architecture Rewrite**: Completely rebuilt the app from React Native to 100% Native Android (Kotlin + Jetpack Compose) to solve unsolvable native plugin crashes on modern Android devices.
+- **Networking Engine**: Replaced `react-native-zeroconf` with a custom-built, lightweight UDP Broadcasting engine for room discovery.
+- **Media Server**: Replaced `@dr.pogodin/react-native-static-server` with `Ktor` (embedded Netty HTTP server) allowing direct streaming from Android's `ContentResolver`.
+- **Video Player**: Upgraded to `androidx.media3` (ExoPlayer) for native video playback.
+- **UI**: Recreated the interface using Jetpack Compose.
 
-## [1.0.0] - 2026-07-18
-### Added
-- **Core Engine:** Initialized React Native Expo project.
-- **Network Discovery:** Implemented `react-native-zeroconf` for mDNS auto-discovery (Host broadcasting and Client scanning) on local networks.
-- **Media Server:** Integrated `@dr.pogodin/react-native-static-server` to serve MP4 video files locally from the Host device via HTTP.
-- **Sync Engine:** Created a fast TCP socket server (`react-native-tcp-socket`) for low-latency synchronization of `Play`, `Pause`, and `Seek` commands between Host and Clients.
-- **Host Screen:** Added UI to pick a local video file (`expo-document-picker`), host it, and control playback (`expo-av`).
-- **Client Screen:** Added UI to automatically discover available rooms, connect seamlessly, and stream synchronized video playback.
-- **UI/UX:** Implemented a minimal, premium Dark Mode aesthetic.
-- **Permissions:** Configured `app.json` with required Android permissions (`INTERNET`, `ACCESS_WIFI_STATE`, `CHANGE_WIFI_MULTICAST_STATE`, `READ_EXTERNAL_STORAGE`) and cleartext traffic bypass.
-- **Release:** Built and distributed the first `app-release.apk` (MVP).
+## [1.0.4-debug] - 2026-07-18 (Deprecated)
+- Attempted to inject global JS error catcher. App still crashed at native initialization level.
+
+## [1.0.0 - 1.0.3] (Deprecated)
+- Initial React Native prototypes. Abandoned due to native module instability.
