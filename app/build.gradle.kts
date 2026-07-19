@@ -78,4 +78,6 @@ dependencies {
     implementation("androidx.documentfile:documentfile:1.0.1")
     implementation("io.ktor:ktor-server-auto-head-response:2.3.8")
     implementation("io.ktor:ktor-server-partial-content:2.3.8")
+    
+    testImplementation("junit:junit:4.13.2")
 }
